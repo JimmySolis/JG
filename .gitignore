@@ -1,0 +1,25 @@
+# Ignore log files
+*.log
+
+# Ignore compiled binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Ignore package files
+*.egg-info/
+dist/
+build/
+
+# Ignore local configuration files
+.idea/
+.vscode/
+.env
+
+# Ignore sensitive data
+secret.key
+passwords.txt
+
+# Ignore macOS Finder files
+.DS_Store
