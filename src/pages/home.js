@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 const images = [
     { src: 'https://via.placeholder.com/300x300', alt: 'Image 1' },
     { src: 'https://via.placeholder.com/300x300', alt: 'Image 2' },
@@ -15,8 +16,10 @@ const images = [
     useEffect(() => {
       const handleScroll = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const newScrollTop = scrollTop + 900
         const headerHeight = document.querySelector('.App-header').clientHeight;
-        setIsHeaderShrunk(scrollTop > headerHeight);
+        setIsHeaderShrunk(newScrollTop > headerHeight);
+        console.log(newScrollTop)
       };
   
       window.addEventListener('scroll', handleScroll);
@@ -25,7 +28,7 @@ const images = [
       };
     }, []);
   
-    const headerStyle = isHeaderShrunk ? { height: '50px' } : { height: '500px' };
+    const headerStyle = isHeaderShrunk ? { height: '100px', position: 'sticky', transition:'3s'} : { height: '1000px' };
   
     return (
       <div className="App">
@@ -34,7 +37,7 @@ const images = [
         </header>
         <div className="image-grid">
           {images.map((image) => (
-            <img key={image.alt} src={image.src} alt={image.alt} />
+            <img key={image.alt} src={image.src} alt={image.alt} className='img-individual' />
           ))}
         </div>
       </div>
