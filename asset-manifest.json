@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/JG/static/css/main.90189924.css",
+    "main.js": "/JG/static/js/main.bd8da564.js",
+    "static/js/787.28cb0dcd.chunk.js": "/JG/static/js/787.28cb0dcd.chunk.js",
+    "static/media/MarioGif.gif": "/JG/static/media/MarioGif.477866c29784cf40ba16.gif",
+    "static/media/MoonGif.gif": "/JG/static/media/MoonGif.9899a33ec9ba2a65130a.gif",
+    "static/media/RomeGif.gif": "/JG/static/media/RomeGif.86f427b5d13ac1eafb67.gif",
+    "static/media/SunGif.gif": "/JG/static/media/SunGif.f3a794f49b6dd2110890.gif",
+    "static/media/InsideStillBrown.png": "/JG/static/media/InsideStillBrown.8d2a1a9db0172023fa2f.png",
+    "static/media/AI.png": "/JG/static/media/AI.3ff8ff8a3ad7cf867d6b.png",
+    "static/media/MarioStill.png": "/JG/static/media/MarioStill.04314d3ebfbaed8dfb16.png",
+    "static/media/RomeStill.png": "/JG/static/media/RomeStill.d4bef77a280940fc6639.png",
+    "static/media/BatGif.gif": "/JG/static/media/BatGif.f47d9a2107aea54c4dda.gif",
+    "static/media/TV.png": "/JG/static/media/TV.3a5e5e6f55e9ee721aba.png",
+    "static/media/MoonStill.png": "/JG/static/media/MoonStill.bbeb7b6122de7eba13ca.png",
+    "static/media/SunStill.png": "/JG/static/media/SunStill.bc744189a147e5610cd9.png",
+    "static/media/BatStill.png": "/JG/static/media/BatStill.17370ba45289ef3c52d3.png",
+    "static/media/BlackInsideStill.png": "/JG/static/media/BlackInsideStill.69da2fa2ab10dde2ee3f.png",
+    "static/media/WhiteInsidestill.png": "/JG/static/media/WhiteInsidestill.183e9ecb947639867ce2.png",
+    "static/media/bathat.png": "/JG/static/media/bathat.198edc4925de3d1a76b0.png",
+    "static/media/ROME.png": "/JG/static/media/ROME.112421acf37260a7b43a.png",
+    "index.html": "/JG/index.html",
+    "main.90189924.css.map": "/JG/static/css/main.90189924.css.map",
+    "main.bd8da564.js.map": "/JG/static/js/main.bd8da564.js.map",
+    "787.28cb0dcd.chunk.js.map": "/JG/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.90189924.css",
+    "static/js/main.bd8da564.js"
+  ]
+}
