@@ -157,7 +157,7 @@ export default function Home() {
 
         <div>
         {wallets.map((wallet) => (
-          <Link to={{ pathname: "/product", state: { data: wallet }}} key={wallet.alt}>
+          <Link to={{ pathname: "/JG/product", state: { data: wallet }}} key={wallet.alt}>
             <img key={wallet.alt} src={wallet.src} alt={wallet.alt} className="img-individual"/>
           </Link>
         ))}
@@ -167,7 +167,7 @@ export default function Home() {
 
         <div>
         {hats.map((hat) => (
-          <Link to={{ pathname: "/product", state: { data: hat }}} key={hat.alt}>
+          <Link to={{ pathname: "/JG/product", state: { data: hat }}} key={hat.alt}>
             <img key={hat.alt} src={hat.src} alt={hat.alt} className="img-individual-hats" />
           </Link>
         ))}
@@ -175,7 +175,7 @@ export default function Home() {
 
         <div>
         {shirts.map((shirt) => (
-          <Link to={{ pathname: "/product", state: { data: shirt }}} key={shirt.alt}>
+          <Link to={{ pathname: "/JG/product", state: { data: shirt }}} key={shirt.alt}>
             <img key={shirt.alt} src={shirt.src} alt={shirt.alt} className="img-individual-shirts" />
           </Link>
         ))}

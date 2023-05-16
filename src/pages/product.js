@@ -14,7 +14,7 @@ export default function Product() {
 
   const relocate = () => {
     console.log('clicked');
-    window.location.href = '/';
+    window.location.href = "/JG/";
   }
 
   const handleMouseOver = () => {
