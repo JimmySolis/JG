@@ -1,8 +1,14 @@
 {
   "files": {
-    "main.css": "/JG/static/css/main.90189924.css",
-    "main.js": "/JG/static/js/main.e2c3a723.js",
+    "main.css": "/JG/static/css/main.91bd2a1e.css",
+    "main.js": "/JG/static/js/main.317bab49.js",
     "static/js/787.28cb0dcd.chunk.js": "/JG/static/js/787.28cb0dcd.chunk.js",
+    "static/media/underOfCap.png": "/JG/static/media/underOfCap.04120dc30c9760e66a3c.png",
+    "static/media/backOfCap.png": "/JG/static/media/backOfCap.0e056e0525f1fbb23dd9.png",
+    "static/media/AiShirtHanger.png": "/JG/static/media/AiShirtHanger.ceeff27771ae3f0d6702.png",
+    "static/media/tvHanger.png": "/JG/static/media/tvHanger.008bfee28e9f0bc1ccf3.png",
+    "static/media/AiShirtHangerBack.png": "/JG/static/media/AiShirtHangerBack.978c549fe8239b82b32f.png",
+    "static/media/tvSticker.png": "/JG/static/media/tvSticker.6bfb3981aac905d1ddf1.png",
     "static/media/MarioGif.gif": "/JG/static/media/MarioGif.477866c29784cf40ba16.gif",
     "static/media/MoonGif.gif": "/JG/static/media/MoonGif.9899a33ec9ba2a65130a.gif",
     "static/media/RomeGif.gif": "/JG/static/media/RomeGif.86f427b5d13ac1eafb67.gif",
@@ -21,12 +27,12 @@
     "static/media/bathat.png": "/JG/static/media/bathat.198edc4925de3d1a76b0.png",
     "static/media/ROME.png": "/JG/static/media/ROME.112421acf37260a7b43a.png",
     "index.html": "/JG/index.html",
-    "main.90189924.css.map": "/JG/static/css/main.90189924.css.map",
-    "main.e2c3a723.js.map": "/JG/static/js/main.e2c3a723.js.map",
+    "main.91bd2a1e.css.map": "/JG/static/css/main.91bd2a1e.css.map",
+    "main.317bab49.js.map": "/JG/static/js/main.317bab49.js.map",
     "787.28cb0dcd.chunk.js.map": "/JG/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.90189924.css",
-    "static/js/main.e2c3a723.js"
+    "static/css/main.91bd2a1e.css",
+    "static/js/main.317bab49.js"
   ]
 }
