@@ -23,6 +23,23 @@
   color: white;
 }
 
+.App-header img {
+  width: 30vmin;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .App-header img {
+    width: 40vmin;
+  }
+}
+
+@media (max-width: 480px) {
+  .App-header img {
+    width: 60vmin;
+  }
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -40,3 +57,57 @@
   padding: 5px;
 }
 
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
+}
+
+.img-individual {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 300px) {
+  .img-individual-hats {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  .img-individual-shirts{
+    width: 80%;
+    margin-bottom: 30px;
+  }
+  
+}
+
+@media screen and (min-width: 768px) {
+  .img-individual {
+    width: 48%;
+    margin-bottom: 30px;
+  }
+  .img-individual-hats {
+    width: 30%;
+    margin-bottom: 30px;
+  }
+  .img-individual-shirts{
+    width: 70%;
+    margin-bottom: 30px;
+  }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .img-individual {
+    width: 30%;
+    margin-bottom: 40px;
+  }
+  .img-individual-shirts{
+    width: 70%;
+    margin-bottom: 30px;
+  }
+}

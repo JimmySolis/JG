@@ -22,7 +22,6 @@
   .product-image {
     width: 100%;
     height: 50vh;
-    background-image: url("https://via.placeholder.com/500x500");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

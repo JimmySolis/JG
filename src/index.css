@@ -1,6 +1,6 @@
 html, body, #root {
-  background: linear-gradient(to bottom ,#fff3f3, #c4d9ff);
-  height: 100%;
+  background: linear-gradient(to bottom ,#fff3f3, #b8d8fa);
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 }
