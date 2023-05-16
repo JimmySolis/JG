@@ -2,45 +2,52 @@
     {
         "name" : "TV",
         "price": 33,
-        "size" : ["S","M","L","XL","2XL","3XL"]
+        "size" : ["S","M","L","XL","2XL","3XL"],
+        "description": "One hundred percent cotton! Softest cloth you'll ever feel. Form fitting. Good for 162 washes"
     },
 
     {
         "name" : "AI",
         "price": 33,
-        "size" : ["S","M","L","XL","2XL","3XL"]
+        "size" : ["S","M","L","XL","2XL","3XL"],
+        "description": "One hundred percent cotton! Softest cloth you'll ever feell. Form fitting. Good for 162 washes"
     },
 
     {
         "name" : "ROME",
-        "price": 44
+        "price": 44,
+        "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
         "name" : "Bat",
         "price": 44,
-        "description": "PVC wallet hand painted with a double breast pocket for cash. A cross vest for id, and three slots for credit cards and other cards you need."
+        "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
         "name" : "SUN",
-        "price": 44
+        "price": 44,
+        "description" : "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
         "name" : "MOON",
-        "price": 44
+        "price": 44,
+        "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
         "name" : "Mario",
-        "price": 44
+        "price": 44,
+        "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
         "name" : "Bat Cap",
         "price": 33,
-        "size" : ["S/M","L/XL"]
+        "size" : ["S/M","L/XL"],
+        "description": "A FlexFit cap, head-fitting. Everyday throw on to help out with bed hair and quick styling option. Wearable with evrything."
     }
 ]
 

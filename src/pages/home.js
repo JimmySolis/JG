@@ -23,28 +23,29 @@ import blackInside from "../img/BlackInsideStill.png"
 import brownInside from "../img/InsideStillBrown.png"
 
 import tv from "../img/TV.png"
+import tvShirtHanger from "../img/tvHanger.png"
+
+import tvSticker from "../img/tvSticker.png"
+
 import AI from "../img/AI.png"
+import aiShirtBack from "../img/AiShirtHangerBack.png"
+import aiShirtHanger from "../img/AiShirtHanger.png"
 
 import batHat from "../img/bathat.png"
+import batHatBack from"../img/backOfCap.png"
+
+import batHatUnder from "../img/underOfCap.png"
 import store from "../products/store.json"
 
 const wallets = [
   { 
     src: rome, 
-    srcSecond: 
-    romeStill, 
+    srcSecond: romeStill, 
     srcThird: brownInside, 
-    alt: 'ROME', name: store[2].name, 
-    description: store[2].description 
-  },
-
-  { 
-    src: sun, 
-    srcSecond: sunStill, 
-    srcThird: whiteInside, 
-    alt: 'SUN', 
-    name: store[4].name, 
-    description: store[4].description 
+    alt: 'ROME',
+    name: store[2].name, 
+    sizes: store[2].size,
+    description: store[2].description
   },
 
   { 
@@ -53,14 +54,27 @@ const wallets = [
     srcThird: blackInside, 
     alt: 'BAT', 
     name: store[3].name, 
+    sizes: store[3].size,
     description: store[3].description
 },
+
+  { 
+    src: sun, 
+    srcSecond: sunStill, 
+    srcThird: whiteInside, 
+    alt: 'SUN', 
+    name: store[4].name, 
+    sizes: store[4].size,
+    description: store[4].description 
+  },
+
   { 
     src: moon, 
     srcSecond: moonStill, 
     srcThird: whiteInside, 
     alt: 'MOON', 
     name: store[5].name, 
+    sizes: store[5].size,
     description: store[5].description 
 },
 
@@ -70,6 +84,7 @@ const wallets = [
     srcThird: whiteInside, 
     alt: 'MARIO', 
     name: store[6].name, 
+    sizes: store[6].size,
     description: store[6].description 
 },
 ];
@@ -77,8 +92,11 @@ const wallets = [
 const hats = [
   { 
     src: batHat, 
+    srcSecond: batHatBack, 
+    srcThird: batHatUnder, 
     alt: 'BAT CAP', 
     name: store[7].name, 
+    sizes: store[7].size,
     description: store[7].description 
 },
 ];
@@ -86,15 +104,21 @@ const hats = [
 const shirts = [
   { 
     src: tv, 
+    srcSecond: tvShirtHanger, 
+    srcThird: tvSticker, 
     alt: 'TV', 
     name: store[0].name, 
+    sizes: store[0].size,
     description: store[0].description 
 },
 
   { 
     src: AI, 
+    srcSecond: aiShirtHanger, 
+    srcThird: aiShirtBack, 
     alt: 'AI', 
     name: store[1].name, 
+    sizes: store[1].size,
     description: store[1].description 
 },
 ];

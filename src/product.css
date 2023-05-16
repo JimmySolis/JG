@@ -17,6 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px;
   }
   
   .product-image {
@@ -60,7 +61,7 @@
     cursor: pointer;
   }
   
-  @media (min-width: 768px) {
+  @media (min-width: 1350px) {
     .product-container {
       flex-direction: row;
       justify-content: center;
@@ -86,12 +87,12 @@
     }
     
     .product-details p {
-      font-size: 24px;
+      font-size: calc(16px + 2vmin);
       text-align: left;
     }
     
     .product-details button {
-      font-size: 24px;
+      font-size: calc(16px + 2vmin);
     }
   }
   
