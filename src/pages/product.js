@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+
+import ShoppingCart from "../pages/component/shoppingCart";
 import "../product.css";
-import rome from "../img/ROME.png";
 
 export default function Product() {
   const location = useLocation();
@@ -13,6 +13,7 @@ export default function Product() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const [cartItems, setCartItems] = useState([]);
 
   const relocate = () => {
     console.log("clicked");
@@ -39,6 +40,14 @@ export default function Product() {
     setSelectedQuantity(Number(event.target.value));
   };
 
+  const handleAddToCart = () => {
+    const item = {
+      name: data.name,
+      quantity: selectedQuantity,
+    };
+    setCartItems([...cartItems, item]);
+  };
+
   const getImageUrl = () => {
     if (hovered) {
       if (currentImageIndex === 0) {
@@ -55,7 +64,7 @@ export default function Product() {
       <header className="header">
         <button onClick={relocate}>Home</button>
         <h1>James Geovanny</h1>
-        <button>Shopping Bag</button>
+        <ShoppingCart items={cartItems} />
       </header>
       <div className="product-container">
         <div
@@ -71,7 +80,11 @@ export default function Product() {
           {data.sizes && (
             <div>
               <label htmlFor="size">Size:</label>
-              <select id="size" value={selectedSize} onChange={handleSizeChange}>
+              <select
+                id="size"
+                value={selectedSize}
+                onChange={handleSizeChange}
+              >
                 <option value="">Select a size</option>
                 {data.sizes.map((size) => (
                   <option key={size} value={size}>
@@ -95,7 +108,7 @@ export default function Product() {
               ))}
             </select>
           </div>
-          <button>Add to Cart</button>
+          <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
       </div>
     </div>
