@@ -10,22 +10,17 @@ const ShoppingCart = ({ items }) => {
   }, [items]);
 
   useEffect(() => {
-    // Update cookies whenever cartItems change
-    document.cookie = `cartItems=${JSON.stringify(cartItems)}; path=/`;
+    // Update localStorage whenever cartItems change
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
   useEffect(() => {
-    // Load cart items from cookies on component mount
-    const cookies = document.cookie.split("; ");
-    const cartItemsCookie = cookies.find((cookie) =>
-      cookie.startsWith("cartItems=")
-    );
-
-    if (cartItemsCookie) {
-      const cartItemsValue = cartItemsCookie.split("=")[1];
-      setCartItems(JSON.parse(cartItemsValue));
+    // Load cart items from localStorage on component mount or page refresh
+    const cartItemsFromStorage = localStorage.getItem("cartItems");
+    if (cartItemsFromStorage) {
+      setCartItems(JSON.parse(cartItemsFromStorage));
     }
-  }, []); // Empty dependency array to run only once on mount
+  }, []);
 
   const toggleCart = () => {
     setIsOpen(!isOpen);

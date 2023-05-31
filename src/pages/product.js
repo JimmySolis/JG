@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import ShoppingCart from "../pages/component/shoppingCart";
@@ -14,6 +14,19 @@ export default function Product() {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedQuantity, setSelectedQuantity] = useState(1);
   const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    // Load cart items from localStorage on component mount
+    const cartItemsFromStorage = localStorage.getItem("cartItems");
+    if (cartItemsFromStorage) {
+      setCartItems(JSON.parse(cartItemsFromStorage));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Update localStorage whenever cartItems change
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const relocate = () => {
     console.log("clicked");
@@ -45,7 +58,7 @@ export default function Product() {
       name: data.name,
       quantity: selectedQuantity,
     };
-    setCartItems([...cartItems, item]);
+    setCartItems((prevItems) => [...prevItems, item]);
   };
 
   const getImageUrl = () => {
