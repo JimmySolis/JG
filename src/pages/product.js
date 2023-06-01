@@ -7,29 +7,21 @@ import "../product.css";
 export default function Product() {
   const location = useLocation();
   const data = location.state && location.state.data;
-  console.log(data); // "Hello from the previous page"
 
   const [hovered, setHovered] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedQuantity, setSelectedQuantity] = useState(1);
-  const [cartItems, setCartItems] = useState([]);
 
-  useEffect(() => {
-    // Load cart items from localStorage on component mount
-    const cartItemsFromStorage = localStorage.getItem("cartItems");
-    if (cartItemsFromStorage) {
-      setCartItems(JSON.parse(cartItemsFromStorage));
-    }
-  }, []);
+  // Check if there are items in the local storage
+  const initialCartItems = localStorage.getItem("cartItems")
+    ? JSON.parse(localStorage.getItem("cartItems"))
+    : [];
 
-  useEffect(() => {
-    // Update localStorage whenever cartItems change
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
+  const [cartItems, setCartItems] = useState(initialCartItems);
 
   const relocate = () => {
-    console.log("clicked");
     window.location.href = "/JG/";
   };
 
@@ -54,11 +46,31 @@ export default function Product() {
   };
 
   const handleAddToCart = () => {
-    const item = {
-      name: data.name,
-      quantity: selectedQuantity,
-    };
-    setCartItems((prevItems) => [...prevItems, item]);
+    const existingItem = cartItems.find((item) => item.name === data.name && item.size === selectedSize);
+  
+    if (existingItem) {
+      // Update the quantity of the existing item
+      const updatedItems = cartItems.map((item) => {
+        if (item.name === data.name && item.size === selectedSize) {
+          return {
+            ...item,
+            quantity: item.quantity + selectedQuantity,
+          };
+        }
+        return item;
+      });
+  
+      setCartItems(updatedItems);
+    } else {
+      // Add a new item to the cart
+      const newItem = {
+        id: data.id,
+        name: data.name,
+        size: selectedSize,
+        quantity: selectedQuantity,
+      };
+      setCartItems([...cartItems, newItem]);
+    }
   };
 
   const getImageUrl = () => {
@@ -72,12 +84,17 @@ export default function Product() {
     return data.src;
   };
 
+  useEffect(() => {
+    // Update local storage whenever cartItems change
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   return (
     <div>
       <header className="header">
         <button onClick={relocate}>Home</button>
         <h1>James Geovanny</h1>
-        <ShoppingCart items={cartItems} />
+        <ShoppingCart items={cartItems} setItems={setCartItems} />
       </header>
       <div className="product-container">
         <div
@@ -93,11 +110,7 @@ export default function Product() {
           {data.sizes && (
             <div>
               <label htmlFor="size">Size:</label>
-              <select
-                id="size"
-                value={selectedSize}
-                onChange={handleSizeChange}
-              >
+              <select id="size" value={selectedSize} onChange={handleSizeChange}>
                 <option value="">Select a size</option>
                 {data.sizes.map((size) => (
                   <option key={size} value={size}>

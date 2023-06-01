@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "name" : "TV",
         "price": 33,
         "size" : ["S","M","L","XL","2XL","3XL"],
@@ -7,6 +8,7 @@
     },
 
     {
+        "id": 2,
         "name" : "AI",
         "price": 33,
         "size" : ["S","M","L","XL","2XL","3XL"],
@@ -14,36 +16,42 @@
     },
 
     {
+        "id": 3,
         "name" : "ROME",
         "price": 44,
         "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
+        "id": 4,
         "name" : "Bat",
         "price": 44,
         "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
+        "id": 5,
         "name" : "SUN",
         "price": 44,
         "description" : "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
+        "id": 6,
         "name" : "MOON",
         "price": 44,
         "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
+        "id": 7,
         "name" : "Mario",
         "price": 44,
         "description": "PVC wallet Hand-Painted with double pockets for cash. A cross vest slot for IDs, and three slots for credit cards and other cards you need."
     },
 
     {
+        "id": 8,
         "name" : "Bat Cap",
         "price": 33,
         "size" : ["S/M","L/XL"],

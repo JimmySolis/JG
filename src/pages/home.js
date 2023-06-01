@@ -39,6 +39,7 @@ import store from "../products/store.json"
 
 const wallets = [
   { 
+    id: store[2].id,
     src: rome, 
     srcSecond: romeStill, 
     srcThird: brownInside, 
@@ -49,6 +50,7 @@ const wallets = [
   },
 
   { 
+    id: store[3].id,
     src: bat, 
     srcSecond: batStill, 
     srcThird: blackInside, 
@@ -59,6 +61,7 @@ const wallets = [
 },
 
   { 
+    id: store[4].id,
     src: sun, 
     srcSecond: sunStill, 
     srcThird: whiteInside, 
@@ -69,6 +72,7 @@ const wallets = [
   },
 
   { 
+    id: store[5].id,
     src: moon, 
     srcSecond: moonStill, 
     srcThird: whiteInside, 
@@ -79,6 +83,7 @@ const wallets = [
 },
 
   { 
+    id: store[6].id,
     src: mario, 
     srcSecond: marioStill, 
     srcThird: whiteInside, 
@@ -91,6 +96,7 @@ const wallets = [
 
 const hats = [
   { 
+    id: store[7].id,
     src: batHat, 
     srcSecond: batHatBack, 
     srcThird: batHatUnder, 
@@ -103,6 +109,7 @@ const hats = [
 
 const shirts = [
   { 
+    id: store[0].id,
     src: tv, 
     srcSecond: tvShirtHanger, 
     srcThird: tvSticker, 
@@ -113,6 +120,7 @@ const shirts = [
 },
 
   { 
+    id: store[1].id,
     src: AI, 
     srcSecond: aiShirtHanger, 
     srcThird: aiShirtBack, 

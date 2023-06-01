@@ -1,24 +1,20 @@
 import React, { useState, useEffect } from "react";
+import _ from "lodash";
 import "../../ShoppingCart.css";
 
-const ShoppingCart = ({ items }) => {
+const ShoppingCart = ({ items, setItems }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
 
   useEffect(() => {
-    setCartItems(items); // Set cart items based on the prop
+    // Update local storage whenever cartItems change
+    localStorage.setItem("cartItems", JSON.stringify(items));
   }, [items]);
 
   useEffect(() => {
-    // Update localStorage whenever cartItems change
-    localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  }, [cartItems]);
-
-  useEffect(() => {
-    // Load cart items from localStorage on component mount or page refresh
-    const cartItemsFromStorage = localStorage.getItem("cartItems");
-    if (cartItemsFromStorage) {
-      setCartItems(JSON.parse(cartItemsFromStorage));
+    // Load cart items from local storage on component mount
+    const storedCartItems = localStorage.getItem("cartItems");
+    if (storedCartItems) {
+      setItems(JSON.parse(storedCartItems));
     }
   }, []);
 
@@ -27,21 +23,39 @@ const ShoppingCart = ({ items }) => {
   };
 
   const removeItem = (index) => {
-    const updatedCartItems = [...cartItems];
-    updatedCartItems.splice(index, 1);
-    setCartItems(updatedCartItems);
+    const updatedCartItems = items.filter((_, i) => i !== index);
+    setItems(updatedCartItems);
+  };
+
+  const increaseQuantity = (index) => {
+    const updatedCartItems = [...items];
+    updatedCartItems[index].quantity += 1;
+    setItems(updatedCartItems);
+  };
+
+  const decreaseQuantity = (index) => {
+    const updatedCartItems = [...items];
+    if (updatedCartItems[index].quantity > 1) {
+      updatedCartItems[index].quantity -= 1;
+      setItems(updatedCartItems);
+    }
   };
 
   const renderCartItems = () => {
-    if (cartItems.length === 0) {
+    if (items.length === 0) {
       return <p>No items in cart</p>;
     }
 
     return (
       <ul>
-        {cartItems.map((item, index) => (
+        {items.map((item, index) => (
           <li key={index}>
-            {item.name} - {item.quantity}
+            {item.name}
+            {item.size && ` - ${item.size}`}
+            {" - "}
+            {item.quantity}
+            <button onClick={() => increaseQuantity(index)}>+</button>
+            <button onClick={() => decreaseQuantity(index)}>-</button>
             <button onClick={() => removeItem(index)}>Remove</button>
           </li>
         ))}
