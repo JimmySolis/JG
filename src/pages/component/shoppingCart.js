@@ -50,11 +50,12 @@ const ShoppingCart = ({ items, setItems }) => {
       <ul>
         {items.map((item, index) => (
           <li key={index}>
+            <img src={item.icon} alt={item.name} className="item-icon" />
             {item.name}
             {item.size && ` - ${item.size}`}
-            {" - "}
-            {item.quantity}
+
             <button onClick={() => increaseQuantity(index)}>+</button>
+            {item.quantity}
             <button onClick={() => decreaseQuantity(index)}>-</button>
             <button onClick={() => removeItem(index)}>Remove</button>
           </li>
@@ -73,7 +74,7 @@ const ShoppingCart = ({ items, setItems }) => {
             <button className="close-button" onClick={toggleCart}>
               X
             </button>
-            {renderCartItems()}
+            <div className="cart-items-container">{renderCartItems()}</div>
           </div>
         </div>
       )}

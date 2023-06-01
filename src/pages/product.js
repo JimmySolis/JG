@@ -14,12 +14,17 @@ export default function Product() {
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
-  // Check if there are items in the local storage
   const initialCartItems = localStorage.getItem("cartItems")
     ? JSON.parse(localStorage.getItem("cartItems"))
     : [];
 
   const [cartItems, setCartItems] = useState(initialCartItems);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const [isShaking, setIsShaking] = useState(false);
+  const [isSizeSelected, setIsSizeSelected] = useState(true);
+  
+  const [buttonState, setButtonState] = useState("Add to Cart");
 
   const relocate = () => {
     window.location.href = "/JG/";
@@ -39,6 +44,7 @@ export default function Product() {
 
   const handleSizeChange = (event) => {
     setSelectedSize(event.target.value);
+    setIsSizeSelected(event.target.value !== "");
   };
 
   const handleQuantityChange = (event) => {
@@ -46,10 +52,29 @@ export default function Product() {
   };
 
   const handleAddToCart = () => {
-    const existingItem = cartItems.find((item) => item.name === data.name && item.size === selectedSize);
-  
+    if (data.sizes && selectedSize === "") {
+      setErrorMessage("Select a size!");
+      setIsShaking(true);
+
+      setTimeout(() => {
+        setErrorMessage("");
+        setIsShaking(false);
+      }, 3000);
+
+      setButtonState("Select a size");
+
+      setTimeout(() => {
+        setButtonState("Add to Cart");
+      }, 3000);
+
+      return;
+    }
+
+    const existingItem = cartItems.find(
+      (item) => item.name === data.name && item.size === selectedSize
+    );
+
     if (existingItem) {
-      // Update the quantity of the existing item
       const updatedItems = cartItems.map((item) => {
         if (item.name === data.name && item.size === selectedSize) {
           return {
@@ -59,18 +84,24 @@ export default function Product() {
         }
         return item;
       });
-  
+
       setCartItems(updatedItems);
     } else {
-      // Add a new item to the cart
       const newItem = {
         id: data.id,
         name: data.name,
         size: selectedSize,
         quantity: selectedQuantity,
+        icon: data.icon,
       };
       setCartItems([...cartItems, newItem]);
     }
+
+    setButtonState("Added");
+
+    setTimeout(() => {
+      setButtonState("Add to Cart");
+    }, 3000);
   };
 
   const getImageUrl = () => {
@@ -85,7 +116,6 @@ export default function Product() {
   };
 
   useEffect(() => {
-    // Update local storage whenever cartItems change
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   }, [cartItems]);
 
@@ -107,10 +137,14 @@ export default function Product() {
         <div className="product-details">
           <h1>{data.name}</h1>
           <p>{data.description}</p>
-          {data.sizes && (
+          {data.sizes && data.sizes.length > 0 && (
             <div>
               <label htmlFor="size">Size:</label>
-              <select id="size" value={selectedSize} onChange={handleSizeChange}>
+              <select
+                id="size"
+                value={selectedSize}
+                onChange={handleSizeChange}
+              >
                 <option value="">Select a size</option>
                 {data.sizes.map((size) => (
                   <option key={size} value={size}>
@@ -134,7 +168,18 @@ export default function Product() {
               ))}
             </select>
           </div>
-          <button onClick={handleAddToCart}>Add to Cart</button>
+          <button
+            onClick={handleAddToCart}
+            className={isShaking ? "shake" : ""}
+            style={{
+              color: isSizeSelected ? "white" : "red",
+              backgroundColor:
+                buttonState === "Added" ? "#0079f2" : "#000000",
+            }}
+          >
+            {buttonState}
+          </button>
+          {errorMessage && console.log("Select a size")}
         </div>
       </div>
     </div>

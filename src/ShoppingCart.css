@@ -3,8 +3,8 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 25%; /* 2/3 of the viewport width */
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 40%; /* 2/3 of the viewport width */
+    background-color: rgba(0, 0, 0, 0.791);
     z-index: 9999;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
@@ -39,3 +39,30 @@
     cursor: pointer;
   }
   
+  .item-icon {
+    width: 15vmin;
+  }
+  
+  .cart-items-container {
+    max-height: 90vh; /* Set the desired height for the scrollable area */
+    overflow-y: auto;
+  }
+
+
+  @media (max-width: 1300px) {
+  .shopping-cart-overlay {
+    width: 50%; /* Adjust the width for smaller viewports */
+  }
+}
+
+@media (max-width: 900px) {
+  .shopping-cart-overlay {
+    width: 70%; /* Adjust the width for smaller viewports */
+  }
+}
+
+@media (max-width: 500px) {
+  .shopping-cart-overlay {
+    width: 100%; /* Adjust the width for smaller viewports */
+  }
+}

@@ -21,7 +21,7 @@
   }
   
   .product-image {
-    width: 100%;
+    width: 80%;
     height: 50vh;
     background-size: contain;
     background-position: center;
@@ -71,7 +71,7 @@
     .product-image {
       width: 50%;
       height: 500px;
-      background-size: cover;
+      background-size: 60%;
       order: 1;
     }
     
@@ -94,5 +94,37 @@
     .product-details button {
       font-size: calc(16px + 2vmin);
     }
+  }
+  
+  .shake {
+    animation: shake 0.3s;
+    animation-iteration-count: 3;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .error-message {
+    color: red;
+  }
+  
+  button.shake {
+    animation: shake 0.3s;
+    animation-iteration-count: 3;
   }
   
