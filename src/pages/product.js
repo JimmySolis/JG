@@ -93,6 +93,7 @@ export default function Product() {
         size: selectedSize,
         quantity: selectedQuantity,
         icon: data.icon,
+        price: data.price
       };
       setCartItems([...cartItems, newItem]);
     }
